@@ -39,13 +39,23 @@ public class SignUpActivity extends BaseActivity {
 //                    강제종료
                 }
 
-//                1. 아이디는 반드시 8글자 이상
-
-
+//                1. 아이디는 반드시 6글자 이상
+                if(userIdEdt.getText().toString().length() < 6 ){
+                    Toast.makeText(mContext, "아이디는 6글자 이상이여야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 //                2. 비밀번호도 8글자 이상
+                if(userPwEdt.getText().toString().length() < 8){
+                    Toast.makeText(mContext, "비밀번호는 8글자 이상이여야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 //                3. 비밀번호와 다시 입력한 비밀번호가 같아야함.
+                if(!userPwEdt.getText().toString().equals(userPwCheckEdt.getText().toString())){
+                    Toast.makeText(mContext, "비밀번호가 서로 다릅니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
             }
         });
 
