@@ -52,7 +52,11 @@ public class SignUpActivity extends BaseActivity {
                 }
 
 //                3. 비밀번호와 다시 입력한 비밀번호가 같아야함.
-                if(!userPwEdt.getText().toString().equals(userPwCheckEdt.getText().toString())){
+
+                String firstPw = userPwEdt.getText().toString();
+                String secondPw = userPwCheckEdt.getText().toString();
+
+                if(!firstPw.equals(secondPw)){
                     Toast.makeText(mContext, "비밀번호가 서로 다릅니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
